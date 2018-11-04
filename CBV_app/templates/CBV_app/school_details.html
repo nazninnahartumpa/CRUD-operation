@@ -5,10 +5,21 @@
 <div class="jumbotron">
 
 <h1>Welcome to the school details</h1>
-<h3>School details</h3>
-<p>Name: {{ school_detail.name }}</p>
-<p>Principle: {{ school_detail.principle }}</p>
-<p>Location: {{ school_detail.location }}</p>
+	<h3>School details</h3>
+	<p>Name: {{ school_detail.name }}</p>
+	<p>Principle: {{ school_detail.principle }}</p>
+	<p>Location: {{ school_detail.location }}</p>
+	<h3>Students: </h3>
+
+	{% for student in school_detail.students.all %}
+	<p>{{student.name}} who is {{student.age}} years old</p>
+	{% endfor %}
+
+	<div class="container">
+		<p><a href="{% url 'CBV_app:update' pk=school_detail.pk %}">Update</a></p>
+		
+	</div>
+
 </div>
 
 

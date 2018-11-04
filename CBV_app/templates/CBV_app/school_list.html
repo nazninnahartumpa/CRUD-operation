@@ -5,8 +5,11 @@
 <h1>Welcome! to a list of all the School</h1>
 <ol>
     {% for school in schools %}
-    <h1><li>{{school.name}}</li></h1>
+
+    <h1><li><a href="{{school.id}}">{{school.name}}</a></li></h1>
+
     {% endfor %}
+
 </ol>
 
 
